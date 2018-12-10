@@ -1,4 +1,4 @@
-FROM tomcat:9.0.5-jre8
+FROM tomcat
 
 # Run the environment intense user $UID=9001& $GID=9001
 ENV RUN_USER            intense -u 9001
