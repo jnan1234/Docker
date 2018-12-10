@@ -1,4 +1,4 @@
-FROM tomcat
+FROM tomcat:9.0.5-jre8
 
 # Run the environment intense user $UID=9001& $GID=9001
 ENV RUN_USER            intense -u 9001
@@ -8,11 +8,11 @@ RUN chown -R intense:intense $CATALINA_HOME
 
 
 # Add Binary files
-ADD /opt/tchard/host-manager/context.xml /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
-ADD /opt/tchard/manager/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-ADD /opt/tchard/tomcat-users.xml /usr/local/tomcat/conf/
-ADD /opt/tchard/server.xml /usr/local/tomcat/conf/
-ADD /opt/tchard/index.jsp /usr/local/tomcat/webapps/ROOT/
+ADD /root/host-manager/context.xml /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
+ADD /root/manager/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
+ADD /root/tomcat-users.xml /usr/local/tomcat/conf/
+ADD /root/server.xml /usr/local/tomcat/conf/
+ADD /root/index.jsp /usr/local/tomcat/webapps/ROOT/
 
 # remove unwanted files
 RUN rm -rf /usr/local/tomcat/webapps/examples
