@@ -25,8 +25,8 @@ RUN sed -i 's/port="8005"/port="9005"/' /usr/local/tomcat/conf/server.xml
 RUN sed -i 's/<Connector/<Connector Server=" " secure="true"/g' /usr/local/tomcat/conf/server.xml
 
 # rename the manager and host-manager
-RUN mv /usr/local/tomcat/webapps/manager /usr/local/tomcat/webapps/controller
-RUN mv /usr/local/tomcat/webapps/host-manager /usr/local/tomcat/webapps/host-controller
+RUN mv /usr/local/tomcat/webapps/manager /usr/local/tomcat/webapps/server
+RUN mv /usr/local/tomcat/webapps/host-manager /usr/local/tomcat/webapps/host-server
 
 # hide the server info
 WORKDIR /usr/local/tomcat/lib
