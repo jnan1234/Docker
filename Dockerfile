@@ -8,7 +8,7 @@ RUN chown -R intense:intense $CATALINA_HOME
 
 
 # Add Binary files
-ADD host-manager/context.xml /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
+ADD /root/host-manager/context.xml /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
 ADD manager/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 ADD tomcat-users.xml /usr/local/tomcat/conf/
 ADD server.xml /usr/local/tomcat/conf/
